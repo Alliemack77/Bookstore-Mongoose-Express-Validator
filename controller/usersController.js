@@ -4,9 +4,6 @@ const objectID = require('mongodb').ObjectID;
 const UserModel = require('../models/userModel');
 
 
-// require and use results validator 
-const resultsValidator = require('../validation/userValidator');
-
 // Handlers
 // /users
 const getUsers = async (req, res) => {

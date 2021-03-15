@@ -66,4 +66,4 @@ res.status(err.status || 500).send({
 });
 
 
-app.listen(port, hostName, () => console.log(`Listening at: ${hostName}:${port}`) )
+app.listen(port, hostName, () => console.log(`Listening at: http://${hostName}:${port}`) )
