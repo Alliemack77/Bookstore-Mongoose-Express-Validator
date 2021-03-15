@@ -7,15 +7,12 @@ const UserModel = require('../models/userModel');
 // Handlers
 // /users
 const getUsers = async (req, res) => {
-    await UserModel.find({}).then((err, docs) => {
-        if(err) {
-            res.json(err)
-        }else {
-            res.json(docs)
-        }
+    await UserModel.find({}).then(docs => {
+        res.json(docs);
+    }).catch(err => {
+        res.json(err);
     });
 }
-
 
 // /users/new
 const addUser = (req, res) => {
@@ -23,7 +20,7 @@ const addUser = (req, res) => {
     const user = new UserModel(req.body);
 
     user.save().then(() => {
-        console.log(`You added" ${user}`);
+        console.log(`You added: ${user}`);
         res.send(user);
     }).catch(err => {
         res.json(err);

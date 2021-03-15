@@ -1,5 +1,3 @@
-// import exp-validator and functs
-
 const { check } = require('express-validator');
 
 exports.userValidator = () => {
